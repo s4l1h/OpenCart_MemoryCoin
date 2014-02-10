@@ -1,0 +1,16 @@
+<modification>
+	<id>Makes the modifications necessary to conveniently use MemoryCoin module</id>
+	<version>1.0</version>
+	<vqmver>2.3.2</vqmver>
+	<author>s4l1h</author>
+
+	<file name="catalog/model/checkout/order.php">
+		<operation>
+			<search position="after"><![CDATA[
+				'currency_value'          => $order_query->row['currency_value'],]]></search>
+			<add><![CDATA[
+				'memorycoin_total'          => $order_query->row['memorycoin_total'],
+				'memorycoin_address'          => $order_query->row['memorycoin_address'],]]></add>
+		</operation>
+	</file>
+</modification>
